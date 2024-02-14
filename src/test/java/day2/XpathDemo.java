@@ -31,6 +31,9 @@ public class XpathDemo {
         String relativeXpath = "//div[@class='_446kkh']";
         System.out.println( driver.findElement(By.xpath(relativeXpath)).getText());
 
+        // //button[@type='submit'][@value='Search']
+
+
 //        NoSuchElementException common reasons:
         // 1. wrong locator
         // 2. timing/waits
