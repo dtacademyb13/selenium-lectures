@@ -48,5 +48,22 @@ public class XpathAdvanced {
 
         System.out.println(driver.findElement(By.xpath("//h2[ contains ( text(), 'Step 2 - Enter your VIN')]//parent::form")).getText());
 
+        // Locate a non-unique element by its unique SIBLING that comes after it
+
+        // syntax  uniqueSibling//preceding-sibling::tagName
+        //label[.='Vehicle Identification Number']//preceding-sibling::input[@type='text']
+        driver.findElement(By.xpath("//label[.='Vehicle Identification Number']//preceding-sibling::input[@type='text']")).sendKeys("UGA1010");
+
+
+        // Locate a non-unique element by its unique SIBLING that comes before it
+
+        // syntax  uniqueSibling//following-sibling::tagName
+        //input[@name='vin']//following-sibling::label
+        System.out.println(driver.findElement(By.xpath("//input[@name='vin']//following-sibling::label")).getText());
+
+
+
+
+
     }
 }
