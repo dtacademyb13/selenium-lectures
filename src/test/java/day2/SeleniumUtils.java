@@ -4,6 +4,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class SeleniumUtils {
@@ -15,5 +16,12 @@ public class SeleniumUtils {
     }
     public static List<WebElement> locateByDataTestIdMultiple(WebDriver driver, String elementName, String datatestid){
         return driver.findElements(By.xpath("//" + elementName + "[@data-testid='"+datatestid+"']"));
+    }
+
+
+    public static List<String> getElementsText(List<WebElement> list){
+        List<String> actual =  new ArrayList<>();
+        list.forEach( s -> actual.add(s.getText()));
+        return actual;
     }
 }
