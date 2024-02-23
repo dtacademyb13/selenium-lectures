@@ -68,14 +68,16 @@ public class WarmUpTask {
 
            //Switch to a new window
 
-           String currentHandle = driver.getWindowHandle();
-           Set<String> windowHandles = driver.getWindowHandles();
+//           String currentHandle = driver.getWindowHandle();
+//           Set<String> windowHandles = driver.getWindowHandles();
+//
+//           for (String windowHandle : windowHandles) {
+//               if(!windowHandle.equals(currentHandle)){
+//                   driver.switchTo().window(windowHandle);
+//               }
+//           }
 
-           for (String windowHandle : windowHandles) {
-               if(!windowHandle.equals(currentHandle)){
-                   driver.switchTo().window(windowHandle);
-               }
-           }
+           SeleniumUtils.switchToWindow(driver);
 
 
            String actualTitle = driver.findElement(By.xpath("//h1[@data-aid='hotel-name']")).getText();
