@@ -53,4 +53,12 @@ public class SeleniumUtils {
         ((JavascriptExecutor)driver).executeScript("arguments[0].click();" , elementToClick );
     }
 
+    public static void scrollToWebElement(WebDriver driver, WebElement elementToScroll){
+        ((JavascriptExecutor)driver).executeScript("window.scrollBy(0,"+elementToScroll.getLocation().getY()+")");
+    }
+
+    public static void scrollBy(WebDriver driver, int x, int y){
+        ((JavascriptExecutor)driver).executeScript("window.scrollBy("+x+","+y+")");
+    }
+
 }
