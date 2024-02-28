@@ -4,7 +4,10 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.time.Duration;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Set;
@@ -59,6 +62,12 @@ public class SeleniumUtils {
 
     public static void scrollBy(WebDriver driver, int x, int y){
         ((JavascriptExecutor)driver).executeScript("window.scrollBy("+x+","+y+")");
+    }
+
+    public static void waitForPresenceOfAllElements(WebDriver driver, Duration duration, By by){
+        WebDriverWait wait =  new WebDriverWait(driver, duration);
+        wait.until(ExpectedConditions.presenceOfAllElementsLocatedBy(by));
+
     }
 
 }
